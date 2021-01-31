@@ -11,11 +11,11 @@ class KnxExporter < Formula
 
   if OS.mac?
     url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.1.1/knx-exporter_0.1.1_darwin_amd64.tar.gz"
-    sha256 "3a9223b1e8164add8cffc50d632eb2032a5c67e5c0ad6206794cdfbc952ece51"
+    sha256 "de350c23b31acb67387323c72d183f4424e9a714fc84a8cf6d99ff36d2e875ac"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.1.1/knx-exporter_0.1.1_linux_amd64.tar.gz"
-    sha256 "938bc84f2d0b3d38845cd00e2b59893854fc041bb671862fc2737bb98046f1a3"
+    sha256 "414e209870df2f64aa170f15754eec5d9af2bc05a0b4cec94db14e0d08b6c3b1"
   end
 
   def install
