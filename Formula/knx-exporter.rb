@@ -5,23 +5,24 @@
 class KnxExporter < Formula
   desc "The KNX Prometheus Exporter is a small bridge to export values measured by KNX sensors to Prometheus."
   homepage "https://github.com/chr-fritz/knx-exporter"
-  version "0.1.1"
+  version "0.2.0"
   license "Apache-2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.1.1/knx-exporter_0.1.1_darwin_amd64.tar.gz"
-    sha256 "de350c23b31acb67387323c72d183f4424e9a714fc84a8cf6d99ff36d2e875ac"
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.0/knx-exporter_0.2.0_darwin_amd64.tar.gz"
+    sha256 "47ebdb956b784471d3d1c839f86fedcd48a994d7fe2bfdc4ae91893735ff9c71"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.1.1/knx-exporter_0.1.1_linux_amd64.tar.gz"
-    sha256 "414e209870df2f64aa170f15754eec5d9af2bc05a0b4cec94db14e0d08b6c3b1"
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.0/knx-exporter_0.2.0_linux_amd64.tar.gz"
+    sha256 "9f61bea759d01fc00d2b4c9f88a1dcb0f642e9ba79709c1ce6dcce4dcc77a063"
   end
 
   def install
     bin.install "knx-exporter"
     bash_completion.install "completions/knx-exporter.bash" => "knx-exporter"
     zsh_completion.install "completions/knx-exporter.zsh" => "_knx-exporter"
+    fish_completion.install "completions/knx-exporter.fish"
   end
 
   test do
