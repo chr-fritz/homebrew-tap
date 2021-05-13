@@ -5,17 +5,25 @@
 class KnxExporter < Formula
   desc "The KNX Prometheus Exporter is a small bridge to export values measured by KNX sensors to Prometheus."
   homepage "https://github.com/chr-fritz/knx-exporter"
-  version "0.2.0"
+  version "0.2.1"
   license "Apache-2.0"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.0/knx-exporter_0.2.0_darwin_amd64.tar.gz"
-    sha256 "47ebdb956b784471d3d1c839f86fedcd48a994d7fe2bfdc4ae91893735ff9c71"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.1/knx-exporter_0.2.1_darwin_amd64.tar.gz"
+    sha256 "e16fbc71c1bf32803f93abb5d7110c9a5d8068a01589c90ab972b8a4c576df81"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.1/knx-exporter_0.2.1_darwin_arm64.tar.gz"
+    sha256 "e6f30d30d45effed8387a45e4a48c719490ae0721b9424578171452ff1df55a6"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.0/knx-exporter_0.2.0_linux_amd64.tar.gz"
-    sha256 "9f61bea759d01fc00d2b4c9f88a1dcb0f642e9ba79709c1ce6dcce4dcc77a063"
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.1/knx-exporter_0.2.1_linux_amd64.tar.gz"
+    sha256 "fad61217e2d004054b4def1c79a264b51bf5bac8f454770f79ad7b78bb64a5e1"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.1/knx-exporter_0.2.1_linux_arm64.tar.gz"
+    sha256 "2040651c8b8335777ebb395899c7c6d13a434cd9aa82f49b56aba806c8e2aefd"
   end
 
   def install
