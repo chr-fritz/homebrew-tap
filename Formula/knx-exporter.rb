@@ -5,25 +5,25 @@
 class KnxExporter < Formula
   desc "The KNX Prometheus Exporter is a small bridge to export values measured by KNX sensors to Prometheus."
   homepage "https://github.com/chr-fritz/knx-exporter"
-  version "0.2.1"
+  version "0.2.2"
   license "Apache-2.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.1/knx-exporter_0.2.1_darwin_amd64.tar.gz"
-    sha256 "e16fbc71c1bf32803f93abb5d7110c9a5d8068a01589c90ab972b8a4c576df81"
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.2/knx-exporter_0.2.2_darwin_amd64.tar.gz"
+    sha256 "b51717cd33f64e5fc770057010453b73ef18d952a62f02cc6b68b706aefe3c14"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.1/knx-exporter_0.2.1_darwin_arm64.tar.gz"
-    sha256 "e6f30d30d45effed8387a45e4a48c719490ae0721b9424578171452ff1df55a6"
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.2/knx-exporter_0.2.2_darwin_arm64.tar.gz"
+    sha256 "732eb32ef2af82cea413530a2559accfd21e8c084beedab3e85082ede94f6328"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.1/knx-exporter_0.2.1_linux_amd64.tar.gz"
-    sha256 "fad61217e2d004054b4def1c79a264b51bf5bac8f454770f79ad7b78bb64a5e1"
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.2/knx-exporter_0.2.2_linux_amd64.tar.gz"
+    sha256 "dfae0f729e0d89fd56dac71f82b7b8b876ff4db7250c5568989b7f65d22ff2a6"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.1/knx-exporter_0.2.1_linux_arm64.tar.gz"
-    sha256 "2040651c8b8335777ebb395899c7c6d13a434cd9aa82f49b56aba806c8e2aefd"
+    url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.2/knx-exporter_0.2.2_linux_arm64.tar.gz"
+    sha256 "3b3b20a8bdede2792e746c79c2ae15924cec1a5998d206c921b78647b6b10215"
   end
 
   def install
