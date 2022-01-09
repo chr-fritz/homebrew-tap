@@ -5,29 +5,29 @@
 class KnxExporter < Formula
   desc "The KNX Prometheus Exporter is a small bridge to export values measured by KNX sensors to Prometheus."
   homepage "https://github.com/chr-fritz/knx-exporter"
-  version "0.2.3"
+  version "0.2.4"
   license "Apache-2.0"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.3/knx-exporter_0.2.3_darwin_arm64.tar.gz"
-      sha256 "92cf09559925aa36fde4aff4a4af2a991de980d71fceec8f036fd91a294689b7"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.3/knx-exporter_0.2.3_darwin_amd64.tar.gz"
-      sha256 "32da922865fa8db75474e4f7e4e9c3920d1db6172afbfd0e3b27acc7c40adbf7"
+      url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.4/knx-exporter_0.2.4_darwin_amd64.tar.gz"
+      sha256 "b5bb5026408d76bf35024e2e3839625dd9240b2d269044439dd71d526e2e83ec"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.4/knx-exporter_0.2.4_darwin_arm64.tar.gz"
+      sha256 "685b7de8e2250e99037e7d911947ef7cbe6fe243d0d4c6a4034bd0bb11e983ae"
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.3/knx-exporter_0.2.3_linux_arm64.tar.gz"
-      sha256 "d1b67de2316e65e689cd9d28d560e7bca1c50445ce7d12db7bfce7735cb0fc4e"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.3/knx-exporter_0.2.3_linux_amd64.tar.gz"
-      sha256 "386d2cfea09bf1924a3e09561b845626e861137b2fd6a0678cba04e39aa37daa"
+      url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.4/knx-exporter_0.2.4_linux_amd64.tar.gz"
+      sha256 "ee34ce94173c05d7c6ee8de86085d13e55e3e8278084ff54419ff257e59dc59c"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/chr-fritz/knx-exporter/releases/download/v0.2.4/knx-exporter_0.2.4_linux_arm64.tar.gz"
+      sha256 "8c9b857cabec993a218405983c0ef06b556ca291ddee2de65e616d3151fb81c5"
     end
   end
 
