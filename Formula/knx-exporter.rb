@@ -7,7 +7,6 @@ class KnxExporter < Formula
   homepage "https://github.com/chr-fritz/knx-exporter"
   version "0.2.4"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
