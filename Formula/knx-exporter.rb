@@ -5,13 +5,13 @@
 class KnxExporter < Formula
   desc "The KNX Prometheus Exporter is a small bridge to export values measured by KNX sensors to Prometheus."
   homepage "https://github.com/chr-fritz/knx-exporter"
-  version "1.2.0"
+  version "1.2.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/chr-fritz/knx-exporter/releases/download/v1.2.0/knx-exporter_1.2.0_darwin_amd64.tar.gz"
-      sha256 "c8744bd6ec4367b9601a126e276c815de7ba0307a073cca047a537e80c4d40e0"
+      url "https://github.com/chr-fritz/knx-exporter/releases/download/v1.2.1/knx-exporter_1.2.1_darwin_amd64.tar.gz"
+      sha256 "6c6289a81d683da70e2773dac35e925e65395e9aa7d1b287d2af870f0788396f"
 
       def install
         bin.install "knx-exporter"
@@ -21,8 +21,8 @@ class KnxExporter < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/chr-fritz/knx-exporter/releases/download/v1.2.0/knx-exporter_1.2.0_darwin_arm64.tar.gz"
-      sha256 "e41d29b6afc32250e4dcdb9a5c6d1089a1d5880b134450436fc60f55d4d7a305"
+      url "https://github.com/chr-fritz/knx-exporter/releases/download/v1.2.1/knx-exporter_1.2.1_darwin_arm64.tar.gz"
+      sha256 "0ec281bfab27a365aa0a5c23f4c2e501b4f2287230d1ee81358255312043b87d"
 
       def install
         bin.install "knx-exporter"
@@ -34,30 +34,24 @@ class KnxExporter < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/chr-fritz/knx-exporter/releases/download/v1.2.0/knx-exporter_1.2.0_linux_amd64.tar.gz"
-        sha256 "e30009c489997e5ae521227f0eb0b4577c6044fab2fa8508964fd7dcbc27539c"
-
-        def install
-          bin.install "knx-exporter"
-          bash_completion.install "completions/knx-exporter.bash" => "knx-exporter"
-          zsh_completion.install "completions/knx-exporter.zsh" => "_knx-exporter"
-          fish_completion.install "completions/knx-exporter.fish"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/chr-fritz/knx-exporter/releases/download/v1.2.1/knx-exporter_1.2.1_linux_amd64.tar.gz"
+      sha256 "fcdd12cae798391fe98d5cc174195a121e8b2ca8505ce50e6b6802c4965eb2e4"
+      def install
+        bin.install "knx-exporter"
+        bash_completion.install "completions/knx-exporter.bash" => "knx-exporter"
+        zsh_completion.install "completions/knx-exporter.zsh" => "_knx-exporter"
+        fish_completion.install "completions/knx-exporter.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/chr-fritz/knx-exporter/releases/download/v1.2.0/knx-exporter_1.2.0_linux_arm64.tar.gz"
-        sha256 "c2ea44d9b8de76e8f331ae09d357d64f430e236d8f20d6e5db124b1d01f579a6"
-
-        def install
-          bin.install "knx-exporter"
-          bash_completion.install "completions/knx-exporter.bash" => "knx-exporter"
-          zsh_completion.install "completions/knx-exporter.zsh" => "_knx-exporter"
-          fish_completion.install "completions/knx-exporter.fish"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/chr-fritz/knx-exporter/releases/download/v1.2.1/knx-exporter_1.2.1_linux_arm64.tar.gz"
+      sha256 "05d61209179a33a7f933ad36cf26b1310a87360f0a561124003e9dce04e02565"
+      def install
+        bin.install "knx-exporter"
+        bash_completion.install "completions/knx-exporter.bash" => "knx-exporter"
+        zsh_completion.install "completions/knx-exporter.zsh" => "_knx-exporter"
+        fish_completion.install "completions/knx-exporter.fish"
       end
     end
   end
